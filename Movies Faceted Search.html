@@ -1,0 +1,159 @@
+<!--
+  ~ Copyright (c) 2019. This source code is programmed by Zhengyu Ding Student ID: 6033660.
+  ~ Only for communicating and testing purpose of the subject MTS 9207/ ISIT 207 lab exercises.
+  ~ Please delete this file in 24 hours after download.
+  ~ All rights reserved.
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies Faceted Search</title>
+    <style>
+        #leftSide{
+            position: absolute;
+            top: 1em;
+            left: 1em;
+            width: 240px;
+            height: auto;
+        }
+        #SearchConditions{
+
+        }
+        #num{
+
+        }
+        #lowerScore{
+            position: absolute;
+            left: 2px;
+            top: auto;
+            width: 231px;
+            clear: both;
+        }
+        #upperScore{
+            margin-top: 5px;
+            position: absolute;
+            left: 2px;
+            top: auto;
+            width: 231px;
+            clear: both;
+        }
+        #divButtons{
+            left: 5px;
+            width: 15em;
+            height: 3em;
+        }
+        #filterButton{
+            position: absolute;
+            left: 2px;
+            width: 100px;
+            display: inline;
+        }
+        #resetButton{
+            position: absolute;
+            left: 139px;
+            width: 100px;
+            display: inline;
+        }
+        #freeText{
+            position: relative;
+            left: 1px;
+            width: 240px;
+            height: 25em;
+            display: inline;
+        }
+        #inputFreeText{
+            width: 233px;
+            display: inline;
+        }
+        #searchButton{
+            position: absolute;
+            left: 213px;
+            width: 25px;
+            height: 25px;
+            display: inline;
+            background: url(search1.png) no-repeat;
+            border:none
+        }
+        #result{
+            position: absolute;
+            left: 260px;
+            top: 1.7em;
+            min-height: calc(100vh - 70px);
+        }
+        #divHistory{
+            position: absolute;
+            left: 2px;
+            width: 240px;
+        }
+        #showHistory{
+            margin-top: 2px;
+            width: 236px;
+        }
+        #clearHistory{
+            margin-top: 2px;
+            width: 236px;
+        }
+        #submitHistory{
+            margin-top: 2px;
+            width: 236px;
+        }
+        #HistoryList{
+            position: relative;
+            top: 80px;
+            width: 15em;
+        }
+        .CopyRight {
+            position: relative;
+            vertical-align: middle;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div id="leftSide">
+    <div class="div" id="SearchConditions"  title="Search Conditions">
+        <!-- use createElement & appendChild-->
+    </div>
+    <p></p>
+    <div class="div" id="num" title="Numerical Conditions">
+        <input placeholder="Lower Score 0-10" title="lowerScore" id="lowerScore" class="infield" type="number"><br>
+        <input placeholder="Upper Score 0-10" title="upperScore" id="upperScore" class="infield" type="number"><br>
+    </div>
+    <p></p>
+    <div id="divButtons" class="div">
+        <!-- two buttons same size and front in center--->
+        <button type="button" id="filterButton" class="button" name="filterButton" value="Filter" onclick="filter()">Filter</button>
+        <button type="button" id="resetButton" class="button" name="resetButton" value="reset" onclick="reset()">Reset</button><br>
+    </div>
+    <div id="freeText">
+        <input placeholder="Free text" type="text" title="Free Text" id="inputFreeText">
+        <button title="search" type="button" id="searchButton" class="button" onclick="freeText()"></button>
+        <p></p>
+    </div>
+    <div class="div" id="divHistory">
+        <button id="showHistory" class="button" type="button" onclick="showHistory()">Show search history</button><br>
+        <button id="clearHistory" class="button" type="button" onclick="clearHistory()">Clear search history</button><br>
+        <button id="submitHistory" class="button" type="button" onclick="submitHistory()">Submit</button><br>
+    </div>
+    <div class="div" title="HistoryList" id="HistoryList"></div>
+
+</div>
+<!-- Result table-->
+<div id="result" class="div">
+    <table border="1" id="resultTable"></table>
+</div>
+<div class="CopyRight">
+    <footer>
+        <span style="font-family:arial;">Copyright &copy; 2019 ZhengyuDing_6033660.</span><br>
+        <span>All Rights Reserved.</span>
+    </footer>
+</div>
+<script src="movies.js"></script>
+</body>
+</html>
